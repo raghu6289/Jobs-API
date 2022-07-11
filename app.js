@@ -22,6 +22,12 @@ const cors = require('cors')
 const xss = require('xss-clean')
 const rateLimiter = require('express-rate-limit')
 
+// Swagger for Documentation
+
+const swaggerUI = require('swagger-ui-express')
+const YAML = require('yamljs')
+const swaggerDocument = YAML.load('./jobsApiDoc.yaml')
+
 
 app.set('trust proxy', 1)
 app.use(rateLimiter({
@@ -37,8 +43,10 @@ app.use(xss())
 
 
 app.get('/', (req, res) => {
-  res.send("<h2>Welcome to Jobs API</h2>")
+  res.send('<h2>Welcome to Jobs API</h2> <a href = "/api-docs">Documentation </a>')
 })
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 // Route Middleware
 
