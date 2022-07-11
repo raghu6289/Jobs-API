@@ -36,6 +36,10 @@ app.use(cors())
 app.use(xss())
 
 
+app.get('/', (req, res) => {
+  res.send("<h2>Welcome to Jobs API</h2>")
+})
+
 // Route Middleware
 
 app.use('/api/v1/auth', authRouter)

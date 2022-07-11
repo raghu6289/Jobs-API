@@ -43,7 +43,7 @@ UserSchema.methods.genToken = function () {
   }
   return jwt.sign(payload,
     process.env.JWT_SECRET,
-    { expiresIn: process.env.JWT_Expires })
+    { expiresIn: process.env.JWT_Expire })
 }
 
 UserSchema.methods.findByCredentials = async function (Password) {
