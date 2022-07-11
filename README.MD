@@ -1,8 +1,7 @@
 #### Setup
 
-```bash
 npm install && npm start
-```
+
 
 #### Database Connection
 
@@ -13,8 +12,8 @@ npm install && npm start
 
 #### Routers
 
-- auth.js
-- jobs.js
+- authRoute.js
+- jobsRoute.js
 
 #### User Model
 
@@ -54,16 +53,3 @@ Email Validation Regex
 - cors
 - xss-clean
 - express-rate-limit
-
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
