@@ -9,7 +9,7 @@ const errorHandler = (err, req, res, next) => {
 
   // Duplicate Email
   if (err.code == 11000) {
-    customError.msg = `Duplicate values entered for ${Object.keys(err.keyValue)} field`
+    customError.msg = `user already exisist ${Object.keys(err.keyValue)}`
     customError.statusCode = StatusCodes.BAD_REQUEST
   }
   // Required field Errors handling
